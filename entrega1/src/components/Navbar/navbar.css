@@ -1,0 +1,48 @@
+@font-face {
+    font-family: elegant;
+    src: url(../Fuentes/Texto/Elegant\ Handwriting.otf);
+}
+
+
+
+nav {
+    height: 80px;
+    width: 100%;
+    background-color: #ff8a7f;
+    font-size: 22px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: sticky;
+    top: 0;
+    z-index: 3;
+}
+
+
+nav h1 {
+    float: left;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline-block;
+    text-transform: capitalize;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+nav ul a {
+    color: #3c6d6f;
+    text-decoration: none;
+    font-size: 36px;
+    padding: 7px 13px;
+}
+
+nav ul a.active,
+nav ul a:hover {
+    color: #ffe0dd;
+    text-decoration: none;
+    cursor: pointer;
+}

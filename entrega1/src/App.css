@@ -1,0 +1,17 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  width: auto;
+  height: auto;
+}
+
+
+body {
+  background: #ffd5cf;
+}
+
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
