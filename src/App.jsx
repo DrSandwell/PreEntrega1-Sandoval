@@ -1,14 +1,25 @@
 import './App.css'
 import Navbar from './components/Navbar/Navbar'
-import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import CardContainer from './components/CardContainer/CardContainer'
+import Card from './components/Card/Card'
+import ItemCount from './components/ItemCount/ItemCount'
+import ProductosListContainer from './components/ProductosListContainer/ProductosListContainer'
+import { useState } from 'react'
 
 function App() {
-  const saludo= "Bienvenidos a mi primer E-Commerce en React"
+  
+  const onAdd = (quantity) => {
+    console.log(quantity)
+
+  }
 
   return (
     <>
       <Navbar/>
-      <ItemListContainer saludo={saludo}/>
+      <ProductosListContainer/>
+      
+      <ItemCount initial= {1} stock= {10} onAdd= {onAdd}/>
+      
     </>
   )
 }
