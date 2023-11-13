@@ -4,40 +4,32 @@ import { useParams } from 'react-router-dom';
 
 const ProductosListContainer = () => {
 
-    const [productData, setProductData] = useState([])
+    const [products, setProducts] = useState([])
     const { categoryId } = useParams()
 
     useEffect(() => {
-        const promiseData = () => {
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    const productosFile = "/products.js"
+        const fetchData = () => {
+            return fetch("/products.js")
+                .then((response) => response.json())
+                .then((data) => {
+                    if (categoryId) {
+                        const filterProducts = data.filter(p => p.category == categoryId)
+                        setProducts(filterProducts)
+                    } else {
+                        setProducts(data)
+                    }
 
-                    fetch(productosFile).
-                        then((response) => response.json())
-                        .then((data) => {
-                            if (categoryId) {
-                                const filterProducts = data.filter(p => p.category == categoryId)
-                                setProductData(filterProducts)
-                            } else {
-                                resolve(data)
-                            }
-
-                        })
-                }, 1000)
-            })
+                })
+                .catch((error) => console.log(error))
         }
-
-        promiseData().then((data) => {
-            setProductData(data)
-        })
-    }, [])
+        fetchData()
+    }, [categoryId])
     return (
         <div>
-            {productData.length == 0 ?
+            {products.length == 0 ?
                 <p>Cargando...</p>
                 :
-                <ProductList products={productData} />
+                <ProductList products={products} />
             }
 
         </div>
