@@ -5,7 +5,7 @@
         "stock": 10,
         "description": "Peluca de Rosalina del juego Mario Bross",        
         "price": 10000,
-        "imgUrl": "../img/Juegos/Rosalina.png",
+        "imgUrl": "./img/Rosalina.png",
         "category": "Mario Bross"
     },
     {

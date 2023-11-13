@@ -28,11 +28,8 @@ const ProductosListContainer = () => {
         <div>
             {productData.length == 0 ?
                 <p>Cargando...</p>
-                : productData.map((product) => {
-                    return(
-                        <ProductList key={product.id} product={product}/>
-                    )
-                })
+                : 
+                <ProductList products= {productData}/>
             }
 
         </div>

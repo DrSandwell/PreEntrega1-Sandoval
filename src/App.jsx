@@ -16,10 +16,7 @@ function App() {
   return (
     <>
       <Navbar/>
-      <ProductosListContainer/>
-      
-      <ItemCount initial= {1} stock= {10} onAdd= {onAdd}/>
-      
+      <ProductosListContainer/>      
     </>
   )
 }
