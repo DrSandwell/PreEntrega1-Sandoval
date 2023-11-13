@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import ProductDetail from '../ProductDetail/ProductDetail';
+import { useParams } from 'react-router-dom';
 
 const ProductDetailContainer = ({ productId }) => {
 
     const [product, setProduct] = useState(null)
+
+    const {idProduct} = useParams()
 
     useEffect(() => {
         const fetchData = () => {
@@ -11,7 +14,7 @@ const ProductDetailContainer = ({ productId }) => {
                 .then((response) => response.json())
                 .then((data) => {
                     console.log(data)
-                    const foundProduct = data.find((item) => item.id == productId)
+                    const foundProduct = data.find((item) => item.id == idProduct)
                     setProduct(foundProduct)
 
                 })
@@ -19,7 +22,7 @@ const ProductDetailContainer = ({ productId }) => {
         }
 
         fetchData()
-    }, [productId])
+    }, [idProduct])
     return (
         <div>
             {

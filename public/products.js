@@ -6,7 +6,7 @@
         "description": "Peluca de Rosalina del juego Mario Bross",        
         "price": 10000,
         "imgUrl": "/img/Rosalina.png",
-        "category": "Mario Bross"
+        "category": "MarioBross"
     },
     {
         "id": 2,
@@ -24,7 +24,7 @@
         "description": "Peluca de Jinx",
         "price": 13000,
         "imgUrl": "/img/jinx.png",
-        "category": "League of Legends"
+        "category": "LeagueofLegends"
     },
     {
         "id": 4,
@@ -33,7 +33,7 @@
         "description": "Peluca de Mai",
         "price": 9000,
         "imgUrl": "/img/mai.png",
-        "category": "The King of Fighters"
+        "category": "TheKingofFighters"
     },
     {
         "id": 5,
@@ -42,7 +42,7 @@
         "description": "Peluca de Eivor",
         "price": 16000,
         "imgUrl": "/img/AC.png",
-        "category": "Assassins creed"
+        "category": "AssassinsCreed"
     },
     {
         "id": 6,

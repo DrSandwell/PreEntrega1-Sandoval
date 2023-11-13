@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import ProductList from '../ProductList/ProductList';
+import { useParams } from 'react-router-dom';
 
 const ProductosListContainer = () => {
 
     const [productData, setProductData] = useState([])
+    const { categoryId } = useParams()
 
     useEffect(() => {
         const promiseData = () => {
@@ -14,9 +16,15 @@ const ProductosListContainer = () => {
                     fetch(productosFile).
                         then((response) => response.json())
                         .then((data) => {
-                            resolve(data)
+                            if (categoryId) {
+                                const filterProducts = data.filter(p => p.category == categoryId)
+                                setProductData(filterProducts)
+                            } else {
+                                resolve(data)
+                            }
+
                         })
-                }, 2000)
+                }, 1000)
             })
         }
 
@@ -28,8 +36,8 @@ const ProductosListContainer = () => {
         <div>
             {productData.length == 0 ?
                 <p>Cargando...</p>
-                : 
-                <ProductList products= {productData}/>
+                :
+                <ProductList products={productData} />
             }
 
         </div>
