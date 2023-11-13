@@ -9,11 +9,9 @@ const Product = ({product}) => {
     return (
         <>
             <div className='contenedor'>
-                <img src='' alt='' />
+                <img src={product.imgUrl} alt={product.name}/>
                 <h1>{product.name}</h1>
-                <p>{product.precio}</p>
-                <h2>{product.stock}</h2>
-                <p>{product.description}</p>
+                <p>Precio: {product.price}</p>
             </div>
             <ItemCount initial={1} stock={product.stock} onAdd= {onAdd}/>
         </>
