@@ -1,9 +1,10 @@
 import React from 'react';
 import Product from '../Product/Product';
+import "./productList.css";
 
 const ProductList = ({products}) => {
     return (
-        <>
+        <div className='productos'>
             {products.map((products) => {
                     return(
                         <Product 
@@ -13,7 +14,7 @@ const ProductList = ({products}) => {
                 })
             }
 
-        </>
+        </div>
     );
 };
 

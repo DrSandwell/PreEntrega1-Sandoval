@@ -1,5 +1,5 @@
 nav {
-    height: 80px;
+    height: 150px;
     width: 100%;
     background-color: #ff8a7f;
     font-size: 22px;
@@ -24,7 +24,7 @@ nav ul {
 nav ul li {
     display: inline-block;
     text-transform: capitalize;
-    line-height: 80px;
+    line-height: 20px;
     margin: 0 5px;
 }
 

@@ -1,0 +1,18 @@
+.productos {
+    width: 100%;
+    display: grid;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: #3c6d6f;
+    font-size: 40px;
+    letter-spacing: 5px;
+    justify-content: center;
+    align-content: center;
+    justify-items: center;
+    background-size: cover;
+    background-position: center;
+    gap: 10px;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
