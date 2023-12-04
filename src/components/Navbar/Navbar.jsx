@@ -1,14 +1,16 @@
 import React from "react";
 import "./navbar.css";
 import CartWidget from "../CartWidget/CartWidget";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
 
     const enlaces = [
         "contacto",
         "ubicacion",
-        "about-me",
+        "about-me"
+    ]
+    const category = [        
         "MarioBross",
         "LeagueofLegends",
         "Bayonetta",
@@ -27,6 +29,18 @@ const Navbar = () => {
                 <li>
                     <CartWidget />
                 </li>
+                <div className="dropdown">
+                    <button>Categorias▼</button>
+                    <div className="content">
+                        {category.map((e, id) =>
+                            <li key={id}>
+                                <Link to={`${e}`}>
+                                    {e}
+                                </Link>
+                            </li>
+                        )}
+                    </div>
+                </div>
 
                 {enlaces.map((e, id) =>
                     <li key={id}>
@@ -34,10 +48,11 @@ const Navbar = () => {
                             {e}
                         </Link>
                     </li>
-                )}
+                )}              
+
 
             </ul>
-        </nav>
+        </nav >
     );
 };
 

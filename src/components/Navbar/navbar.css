@@ -1,5 +1,5 @@
 nav {
-    height: 150px;
+    height: 80px;
     width: 100%;
     background-color: #ff8a7f;
     font-size: 22px;
@@ -13,12 +13,14 @@ nav h1 {
     float: left;
     color: #3c6d6f;
     text-decoration: none;
-    
+
 }
 
 nav ul {
-    float: right;
+    display: flex;
     list-style: none;
+    align-items: center;
+    float: right;
 }
 
 nav ul li {
@@ -48,4 +50,43 @@ nav img {
     float: left;
     position: relative;
     padding: 0;
+}
+
+.dropdown{
+    display: inline-block;
+}
+
+.dropdown button {
+    background-color: #3c6d6f;
+    color: #ffe0dd;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown li{
+    display: block;
+    color: #3c6d6f;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+.dropdown .content{
+    display: none;
+    position: absolute;
+    background-color: #ffe0dd;
+    min-width: 100px;
+    box-shadow: 2px 2px 5px black;
+}
+
+.dropdown:hover .content{
+    display: block;
+}
+
+.dropdown:hover button{
+    background-color:darkcyan;
+}
+
+.dropdown li:hover{
+    background-color:deeppink;
 }

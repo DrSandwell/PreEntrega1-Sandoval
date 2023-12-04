@@ -7,6 +7,7 @@ import Contacto from './components/Contacto/Contacto'
 import Ubicacion from './components/Ubicacion/Ubicacion'
 import Error from './components/Error/Error'
 import AboutMe from './components/AboutMe/AboutMe'
+import Cart from './components/Cart/Cart'
 
 function App() {
 
@@ -14,7 +15,7 @@ function App() {
     <>
 
       <BrowserRouter>
-        <Navbar />
+        <Navbar/>
         <Routes>
           <Route path='/' element={<ProductosListContainer />} />
           <Route path='/detalle/:idProduct' element={<ProductDetailContainer />} />
@@ -22,6 +23,7 @@ function App() {
           <Route path='/about-me' element={<AboutMe />} />
           <Route path='/contacto' element={<Contacto />} />
           <Route path='/ubicacion' element={<Ubicacion />} />
+          <Route path='/Cart' element={<Cart/>} />
           <Route path='*' element={<Error />} />
         </Routes>
 
