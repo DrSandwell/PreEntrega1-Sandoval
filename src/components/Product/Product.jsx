@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from '../../context/CartContext';
 
 const Product = ({ product }) => {
-
-    const onAdd = (quantity) => {
-        console.log(quantity)
+    const { addToCart } = useContext(CartContext)
+    const onAdd = (cantidad) => {
+        addToCart(product, cantidad)
     }
     return (
         <>
