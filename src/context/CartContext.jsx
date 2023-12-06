@@ -9,7 +9,7 @@ export const CartProvider = ({ children }) => {
 
     const addToCart = (producto, cantidad) => {
         if (!isInCart(producto.id)) {
-            setCart((prev)=>[...prev,{producto,cantidad}])
+            setCart((prev) => [...prev, { producto, cantidad }])
 
         } else {
             console.log("No se puede agregar mas")
@@ -20,15 +20,17 @@ export const CartProvider = ({ children }) => {
         return cart.some((i) => i.producto.id === itemId)
     }
     const getTotalItems = () => {
-        let cant=0
-        cart.forEach((e)=> cant+= e.cantidad)
+        let cant = 0
+        cart.forEach((e) => cant += e.cantidad)
         return cant
     }
 
-    const removeItem = () => {
-
+    const removeItem = (id) => {
+        const filtrarCarrito = cart.filter((item)=>item.producto.id!== id)
+        setCart(filtrarCarrito)
     }
     const clearCart = () => {
+        setCart([])
 
     }
 

@@ -5,10 +5,12 @@ import { useParams } from 'react-router-dom';
 const ProductosListContainer = () => {
 
     const [products, setProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     const { categoryId } = useParams()
 
     useEffect(() => {
         const fetchData = () => {
+            setLoading(true)
             return fetch("/products.js")
                 .then((response) => response.json())
                 .then((data) => {
@@ -21,15 +23,16 @@ const ProductosListContainer = () => {
 
                 })
                 .catch((error) => console.log(error))
+                .finally(() => setLoading(false))
         }
-        fetchData()
+        setTimeout(() => fetchData(), 1000)
     }, [categoryId])
     return (
         <div>
-            {products.length == 0 ?
-                <p>Cargando...</p>
-                :
-                <ProductList products={products} />
+            {loading ? (
+                <p>Cargando...</p>)
+                : (
+                    <ProductList products={products} />)
             }
 
         </div>
