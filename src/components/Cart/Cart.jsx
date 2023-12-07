@@ -3,8 +3,7 @@ import { CartContext } from '../../context/CartContext';
 import Product from '../Product/Product';
 
 const Cart = () => {
-    const { cart, clearCart, removeItem } = useContext(CartContext)
-    console.log(cart)
+    const { cart, clearCart, removeItem} = useContext(CartContext)    
     return (
         <div>
             <h1>Tu Carrito</h1>            
@@ -12,7 +11,7 @@ const Cart = () => {
                 {
                     cart.length>0 ? (
                     cart.map((item) => {
-                            return <li>
+                            return <li key={item.producto.id}>
                                 <Product product={item.producto} />
                                 <button onClick={()=>removeItem(item.producto.id)}>Eliminar producto</button>
                             </li>

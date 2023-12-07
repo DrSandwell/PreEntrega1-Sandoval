@@ -9,8 +9,26 @@ import Error from './components/Error/Error'
 import AboutMe from './components/AboutMe/AboutMe'
 import Cart from './components/Cart/Cart'
 import { CartProvider } from './context/CartContext'
+import {getFirestore, collection, getDocs} from "firebase/firestore"
+import { useEffect, useState } from 'react'
 
 function App() {
+
+  const [product, setProduct] = useState([])
+  
+  useEffect(()=>{
+    const db = getFirestore()
+    const collectionRef = collection(db,"productos");
+
+    getDocs(collectionRef).then((snapshot)=>{
+      setProduct(snapshot.docs.map((doc)=>(
+        {id:doc.id,...doc.data()}
+      )))
+    })
+
+  },[])
+
+  console.log(product)
 
   return (
     <>

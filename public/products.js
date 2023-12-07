@@ -14,7 +14,7 @@
         "stock": 7,
         "description": "Peluca de Bayonetta del juego Bayonetta ah re",
         "price": 15000,
-        "imgUrl": "/img//Bayonetta.png",
+        "imgUrl": "/img/Bayonetta.png",
         "category": "Bayonetta"
     },
     {
@@ -51,7 +51,7 @@
         "description": "Peluca de Akali",
         "price": 11000,
         "imgUrl": "/img/akali.png",
-        "category": "League of Legends"
+        "category": "LeagueofLegends"
     }
 ]
 

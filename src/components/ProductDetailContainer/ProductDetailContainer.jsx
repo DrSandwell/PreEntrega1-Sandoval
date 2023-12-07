@@ -12,8 +12,7 @@ const ProductDetailContainer = ({ productId }) => {
         const fetchData = () => {
             return fetch("/products.js")
                 .then((response) => response.json())
-                .then((data) => {
-                    console.log(data)
+                .then((data) => {                    
                     const foundProduct = data.find((item) => item.id == idProduct)
                     setProduct(foundProduct)
 
