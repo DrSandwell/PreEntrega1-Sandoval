@@ -9,26 +9,9 @@ import Error from './components/Error/Error'
 import AboutMe from './components/AboutMe/AboutMe'
 import Cart from './components/Cart/Cart'
 import { CartProvider } from './context/CartContext'
-import {getFirestore, collection, getDocs} from "firebase/firestore"
-import { useEffect, useState } from 'react'
+import Checkout from './components/Checkout/Checkout'
 
 function App() {
-
-  const [product, setProduct] = useState([])
-  
-  useEffect(()=>{
-    const db = getFirestore()
-    const collectionRef = collection(db,"productos");
-
-    getDocs(collectionRef).then((snapshot)=>{
-      setProduct(snapshot.docs.map((doc)=>(
-        {id:doc.id,...doc.data()}
-      )))
-    })
-
-  },[])
-
-  console.log(product)
 
   return (
     <>
@@ -44,6 +27,7 @@ function App() {
             <Route path='/contacto' element={<Contacto />} />
             <Route path='/ubicacion' element={<Ubicacion />} />
             <Route path='/Cart' element={<Cart />} />
+            <Route path='/Checkout' element={<Checkout/>} />
             <Route path='*' element={<Error />} />
           </Routes>
         </CartProvider>

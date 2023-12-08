@@ -1,0 +1,19 @@
+.contenedor-cart {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.contenido-cart {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    align-items: center;
+    list-style: none;
+}
+
+.cart-vaciar {
+    text-align: center;
+}
