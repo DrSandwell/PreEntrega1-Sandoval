@@ -22,7 +22,7 @@ const ProductDetail = ({ producto }) => {
             <p>Descripcion: {producto.description}</p>
             <p>Juego: {producto.category}</p>
             {quantity == 0 ?
-                <ItemCount initial={1} stock={producto.stock} onAdd={onAdd} />
+                <ItemCount initial={1} producto={producto} onAdd={onAdd} />
                 :
                 <Link to="/Cart">Ir al carrito</Link>}
         </div>

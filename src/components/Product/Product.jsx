@@ -18,7 +18,7 @@ const Product = ({ product }) => {
                 <p>Precio: {product.price}</p>
                 <p>Stock: {product.stock}</p>
             </div>
-            <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+            <ItemCount initial={1} producto={product} onAdd={onAdd} />
         </>
     );
 };
