@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { collection, addDoc, updateDoc, doc, getDoc, getFirestore } from 'firebase/firestore';
 import { CartContext } from '../../context/CartContext';
+import "./checkout.css"
 
 const Checkout = () => {
     const [nombre, setNombre] = useState("");
@@ -71,7 +72,7 @@ const Checkout = () => {
     }
 
     return (
-        <div>
+        <div className='container'>
             <h2>Ingresa tus datos</h2>
 
             <form onSubmit={manejadorFormulario}>
@@ -108,7 +109,7 @@ const Checkout = () => {
                     <input type='email' maxLength="20" onChange={(e) => setEmailConfirmacion(e.target.value)} />
                 </div>
 
-                {error && <p>{error}</p>}
+                {error && <p className="error">{error}</p>}
 
                 <button type='submit'>Comprar</button>
                 {
